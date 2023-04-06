@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lY7/PTlGE0DTAPhCz93DTifTxKDxBP9MDa9Wtu+wXm0=",
+  "Source": "BCCloudScopeOnPrem",
+  "BasePath": "_content/BCCloudScopeOnPrem",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
