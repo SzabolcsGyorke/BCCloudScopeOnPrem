@@ -19,3 +19,5 @@ AL App/.snapshots/
 cache_*
 ~$*
 bin/
+obj/Debug
+obj/Release
