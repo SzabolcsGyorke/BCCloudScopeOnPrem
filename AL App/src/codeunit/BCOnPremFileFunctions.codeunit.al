@@ -188,6 +188,38 @@ codeunit 51000 "BC OnPrem File Functions"
                 exit(true);
             end;
     end;
+
+    procedure CopyServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
+    var
+        JsonObject: JsonObject;
+        JsonToken: JsonToken;
+        response: Text;
+    begin
+        response := BCOnPremFileHttpManagement.CallService(GetServerAddress(), RequestType::post, StrSubstNo(QueryTxt, 'copy', CheckFilePath(FromFileNamePath), CheckFilePath(ToFileNamePath), 'notihng'));
+        JsonObject.ReadFrom(response);
+
+        if JsonObject.Get('Success', JsonToken) then
+            if JsonToken.AsValue().AsBoolean() then
+                exit(true)
+            else
+                exit(false);
+    end;
+
+    procedure MoveServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
+    var
+        JsonObject: JsonObject;
+        JsonToken: JsonToken;
+        response: Text;
+    begin
+        response := BCOnPremFileHttpManagement.CallService(GetServerAddress(), RequestType::post, StrSubstNo(QueryTxt, 'move', CheckFilePath(FromFileNamePath), CheckFilePath(ToFileNamePath), 'notihng'));
+        JsonObject.ReadFrom(response);
+
+        if JsonObject.Get('Success', JsonToken) then
+            if JsonToken.AsValue().AsBoolean() then
+                exit(true)
+            else
+                exit(false);
+    end;
 }
 
 
