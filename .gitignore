@@ -18,5 +18,5 @@ AL App/.altemplates/
 AL App/.snapshots/
 cache_*
 ~$*
-bin/
-obj/
+bin
+publish
