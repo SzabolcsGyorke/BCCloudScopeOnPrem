@@ -3,7 +3,7 @@ Access to local file system with cloud scope extensions on prem - Business Centr
 
 The main idea is to mimic the FileManagement codeunit's local file functions without having to use the onPrem scope in our extension.
 
-For this we can use a simple .net web api application which by default listens on http://localhost:49352/BCCouldScopeOnPrem and waits for commands from the BC middle tier. The defult server adderss and port can be changed on the **Company Information** page.
+For this we can use a simple .net web api application which by default listens on http://localhost:49352/BCCouldScopeOnPrem and waits for commands from the BC middle tier. The default server address and port can be changed on the **Company Information** page.
 
 **It is important that it should only be accessible on localhost due to it is only uses http.**
 
