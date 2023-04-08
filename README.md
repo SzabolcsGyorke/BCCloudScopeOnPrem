@@ -61,4 +61,76 @@ If everything is right you should see this:
 All the functions are in the codeunit 51000 "BC OnPrem File Functions":
 
 ### procedure GetServerDirectoryFilesList(var NameValueBuffer: Record "Name/Value Buffer"; DirectoryPath: Text)
+Returns the files from the server folder.
+| Parameter | Description |
+| --- | --- |
+| NameValueBuffer | Return value with the found files |
+| DirectoryPath | Server directory |
 
+### procedure GetServerDirectoryFilesListInclSubDirs(var TempNameValueBuffer: Record "Name/Value Buffer" temporary; DirectoryPath: Text)
+Returns the files from the server folder and subfolders.
+| Parameter | Description |
+| --- | --- |
+| NameValueBuffer | Return value with the found files |
+| DirectoryPath | Server directory |
+
+### procedure BLOBImportFromServerFile(var TempBlob: Codeunit "Temp Blob"; FilePath: Text)
+Uploads a file form the server to a tempblob.
+| Parameter | Description |
+| --- | --- |
+| TempBlob | Return value with the file content |
+| FilePath | Full file path on the server |
+
+### procedure BLOBExportToServerFile(var TempBlob: Codeunit "Temp Blob"; FilePath: Text): Boolean
+Downloads the contents of the tempblob to a server file.
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| TempBlob | File content |
+| FilePath | Full file path on the server |
+
+### procedure CreateServerFolder(FolderPath: Text): Boolean
+Creates a folder on the server
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| FolderPath | Full file path on the server where the last directory is the one to create |
+
+### procedure DeleteServerFile(FilePath: Text): Boolean
+Deletes a file on the server.
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| FilePath | Full file path and name |
+
+###  procedure GetServerFileProperties(FullFileName: Text; var ModifyDate: Date; var ModifyTime: Time; var Size: BigInteger): Boolean;
+Returns file information: last changed date, time and size.
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| FullFileName | Full file path and name |
+| ModifyDate | Return: Last modified date |
+| ModifyTime | Return: Last modified time |
+| Size | Return: file size |
+
+### procedure CopyServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
+Copies a file from one folder to another.
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| FromFileNamePath | Full file path and name copied from |
+| ToFileNamePath | Full file path and name copied to |
+
+### procedure MoveServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
+Moves a file between folders on the server.
+Returns true if the operation was sucsessful.
+
+| Parameter | Description |
+| --- | --- |
+| FromFileNamePath | Full file path and name moved from |
+| ToFileNamePath | Full file path and name moved to |
