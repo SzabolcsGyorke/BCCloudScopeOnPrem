@@ -3,17 +3,18 @@ Access to local file system with cloud scope extensions on prem - Business Centr
 
 The main idea is to mimic the FileManagement codeunit's local file functions without having to use the onPrem scope in our extension.
 
-For this we can use a simple .net web api application which by default listens on http://localhost:49352/BCCouldScopeOnPrem and waits for commands from the BC middle tier.
+For this we can use a simple .net web api application which by default listens on http://localhost:49352/BCCouldScopeOnPrem and waits for commands from the BC middle tier. The defult server adderss and port can be changed on the **Company Information** page.
 
 **It is important that it should only be accessible on localhost due to it is only uses http.**
 
 Prerequisites:
 * .net 7 - web api
+* ASP.NET Core Runtime - https://dotnet.microsoft.com/en-us/download/dotnet/7.0
 * Business Central 21
 
-Missing parts
-- File copy, move function
-- IIS installer PS script
+Version 0.2.0.0
+* IIS installation script
+* BC Functions: CopyServerFile, MoveServerFile
 
 Version 0.1.0.0
 
@@ -24,6 +25,12 @@ You can connect to the .net web api service on localhost and ask the following:
 * Get file info (size, date)
 * Create Folder on server
 * Delete File from server
+
+## Installation
+1. Download the release or clone the repo and compile your own
+2. Create a directory for the web component 
+3. Run the install_service_to_IIS.ps1 in the web components folder
+4. Install the BC Extensions
 
 ## Testing
 Deploy the BC app and search for "BC OnPrem File Tester"
@@ -50,5 +57,8 @@ Before run any BC query first start the web api service with the "BCCloudScopeOn
 If everything is right you should see this:
 ![image](https://user-images.githubusercontent.com/64136814/230490059-ec909298-9bc5-4212-9556-f2b062c2be61.png)
 
+## Usage
+All the functions are in the codeunit 51000 "BC OnPrem File Functions":
 
-The plan is to have an install script for IIS so it could work independently of the logged in user.
+### procedure GetServerDirectoryFilesList(var NameValueBuffer: Record "Name/Value Buffer"; DirectoryPath: Text)
+
