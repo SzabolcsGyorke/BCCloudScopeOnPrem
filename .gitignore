@@ -1,0 +1,23 @@
+*.app
+*.flf
+*.bclicense
+*.g.xlf
+.DS_Store
+Thumbs.db
+TestResults*.xml
+bcptTestResults*.json
+BuildOutput.txt
+rad.json
+AL App/.output/
+AL App/.dependencies/
+AL App/.buildartifacts/
+AL App/.alpackages/
+AL App/.packages/
+AL App/.alcache/
+AL App/.altemplates/
+AL App/.snapshots/
+cache_*
+~$*
+bin
+publish
+obj
