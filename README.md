@@ -27,8 +27,8 @@ You can connect to the .net web api service on localhost and ask the following:
 * Delete File from server
 
 ## Installation
-1. Download the release or clone the repo and compile your own
-2. Create a directory for the web component 
+1. Download the [release](https://github.com/SzabolcsGyorke/BCCloudScopeOnPrem/releases/tag/v.0.2.0.0) or clone the repo and compile your own
+2. Create a directory for the web component - in the zip the default is BCCloudScopeOnPrem
 3. Run the install_service_to_IIS.ps1 in the web components folder
 4. Install the BC Extensions
 
