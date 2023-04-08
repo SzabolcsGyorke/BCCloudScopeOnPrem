@@ -83,7 +83,7 @@ Uploads a file form the server to a tempblob.
 
 ### procedure BLOBExportToServerFile(var TempBlob: Codeunit "Temp Blob"; FilePath: Text): Boolean
 Downloads the contents of the tempblob to a server file.
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
@@ -92,7 +92,7 @@ Returns true if the operation was sucsessful.
 
 ### procedure CreateServerFolder(FolderPath: Text): Boolean
 Creates a folder on the server
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
@@ -100,7 +100,7 @@ Returns true if the operation was sucsessful.
 
 ### procedure DeleteServerFile(FilePath: Text): Boolean
 Deletes a file on the server.
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
@@ -108,7 +108,7 @@ Returns true if the operation was sucsessful.
 
 ###  procedure GetServerFileProperties(FullFileName: Text; var ModifyDate: Date; var ModifyTime: Time; var Size: BigInteger): Boolean;
 Returns file information: last changed date, time and size.
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
@@ -119,7 +119,7 @@ Returns true if the operation was sucsessful.
 
 ### procedure CopyServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
 Copies a file from one folder to another.
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
@@ -128,7 +128,7 @@ Returns true if the operation was sucsessful.
 
 ### procedure MoveServerFile(FromFileNamePath: Text; ToFileNamePath: Text): Boolean
 Moves a file between folders on the server.
-Returns true if the operation was sucsessful.
+Returns true if the operation was successful.
 
 | Parameter | Description |
 | --- | --- |
